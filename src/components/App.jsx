@@ -24,7 +24,7 @@ export class App extends Component {
   };
 
   countTotalFeedback() {
-    this.setState({ total: this.state.total ? this.state.total : 0 + 1 });
+    this.setState({ total: (this.state.total ? this.state.total : 0) + 1 });
   }
 
   countPositiveFeedbackPercentage(button) {
