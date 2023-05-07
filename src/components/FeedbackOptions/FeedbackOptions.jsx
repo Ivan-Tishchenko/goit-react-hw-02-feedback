@@ -1,4 +1,5 @@
 import css from './FeedbackOptions.module.css';
+import PropTypes from 'prop-types';
 
 export const FeedbackOptions = props => {
   const { callback, state } = props;
@@ -7,11 +8,20 @@ export const FeedbackOptions = props => {
     <>
       {keys.map(name =>
         keys.indexOf(name) < 3 ? (
-          <button key={keys.indexOf(name)} className={css.button} onClick={callback}>
+          <button
+            key={keys.indexOf(name)}
+            className={css.button}
+            onClick={callback}
+          >
             {name}
           </button>
         ) : undefined
       )}
     </>
   );
+};
+
+FeedbackOptions.propTypes = {
+  callback: PropTypes.func,
+  state: PropTypes.object,
 };
