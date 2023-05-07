@@ -1,3 +1,5 @@
+import css from './FeedbackOptions.module.css';
+
 export const FeedbackOptions = props => {
   const { callback, state } = props;
   const keys = Object.keys(state);
@@ -5,7 +7,7 @@ export const FeedbackOptions = props => {
     <>
       {keys.map(name =>
         keys.indexOf(name) < 3 ? (
-          <button key={keys.indexOf(name)} onClick={callback}>
+          <button key={keys.indexOf(name)} className={css.button} onClick={callback}>
             {name}
           </button>
         ) : undefined
