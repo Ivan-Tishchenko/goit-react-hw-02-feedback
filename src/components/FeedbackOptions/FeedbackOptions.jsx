@@ -3,20 +3,18 @@ import PropTypes from 'prop-types';
 
 export const FeedbackOptions = props => {
   const { callback, state } = props;
-  const keys = Object.keys(state);
+  const keys = Object.keys(state).slice(0, 3);
   return (
     <>
-      {keys.map(name =>
-        keys.indexOf(name) < 3 ? (
-          <button
-            key={keys.indexOf(name)}
-            className={css.button}
-            onClick={callback}
-          >
-            {name}
-          </button>
-        ) : undefined
-      )}
+      {keys.map(name => (
+        <button
+          key={keys.indexOf(name)}
+          className={css.button}
+          onClick={() => callback(name)}
+        >
+          {name}
+        </button>
+      ))}
     </>
   );
 };
